@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+         http://www.springframework.org/schema/beans
+	 http://www.springframework.org/schema/beans/spring-beans.xsd
+         http://www.springframework.org/schema/context
+	 http://www.springframework.org/schema/context/spring-context.xsd
+        ">
+
+    <context:annotation-config/>
+    <context:property-placeholder location="classpath:META-INF/application.properties"/>
+
+    <bean id="conversionService" class="com.lvg.txtest.conv.formatters.ApplicationConversionServiceFactoryBean">
+    </bean>
+
+    <bean id="chris" class="com.lvg.txtest.conv.models.User">
+        <property name="firstName" value="Chris"/>
+        <property name="lastName" value="Ford"/>
+        <property name="birthDate" value="1958-06-21"/>
+        <property name="personalSite" value="http://www.fordchris.com"/>
+    </bean>
+    <bean id="myUser" class="com.lvg.txtest.conv.models.User">
+        <property name="firstName" value="${myUser.firstName}"/>
+        <property name="lastName" value="${myUser.lastName}"/>
+        <property name="birthDate" value="${myUser.birthDate}"/>
+        <property name="personalSite" value="${myUser.personalSite}"/>
+    </bean>
+
+</beans>

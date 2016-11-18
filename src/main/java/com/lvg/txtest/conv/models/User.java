@@ -2,6 +2,8 @@ package com.lvg.txtest.conv.models;
 
 import org.joda.time.DateTime;
 
+import java.net.URL;
+
 /**
  * Created by Victor Levchenko (LVG Corp.) on 17.11.2016.
  */
@@ -9,7 +11,7 @@ public class User {
     private String firstName;
     private String lastName;
     private DateTime birthDate;
-    private String personalSite;
+    private URL personalSite;
 
     public String getFirstName() {
         return firstName;
@@ -35,11 +37,11 @@ public class User {
         this.birthDate = birthDate;
     }
 
-    public String getPersonalSite() {
+    public URL getPersonalSite() {
         return personalSite;
     }
 
-    public void setPersonalSite(String personalSite) {
+    public void setPersonalSite(URL personalSite) {
         this.personalSite = personalSite;
     }
 
