@@ -10,10 +10,10 @@ import org.springframework.core.convert.ConversionService;
  */
 public class FormatConverterServiceTest {
 
-    private static final Logger LOG = Logger.getLogger(ConverterServiceTest.class);
+    private static final Logger LOG = Logger.getLogger(FormatConverterServiceTest.class);
 
     public static void main(String[] args) {
-        LOG.info("START CONVERTER SERVICE TEST MODULE");
+        LOG.info("START FORMAT CONVERTER SERVICE TEST MODULE");
         GenericXmlApplicationContext ctx =
                 new GenericXmlApplicationContext("classpath:META-INF/spring/format-conv-service-app-context.xml");
 
@@ -26,6 +26,6 @@ public class FormatConverterServiceTest {
         System.out.println("Formated birth date: "+conversionService.convert(myUser.getBirthDate(), String.class));
 
 
-        LOG.info("END CONVERTER SERVICE TEST MODULE");
+        LOG.info("END FORMAT CONVERTER SERVICE TEST MODULE");
     }
 }
