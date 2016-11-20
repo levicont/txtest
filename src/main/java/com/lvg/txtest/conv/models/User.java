@@ -1,13 +1,19 @@
 package com.lvg.txtest.conv.models;
 
+import com.lvg.txtest.valid.annotation.CheckIndividualUser;
 import org.joda.time.DateTime;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.net.URL;
 
 /**
  * Created by Victor Levchenko (LVG Corp.) on 17.11.2016.
  */
+@CheckIndividualUser
 public class User {
+    @NotNull
+    @Size(min = 2, max = 60)
     private String firstName;
     private String lastName;
     private DateTime birthDate;
